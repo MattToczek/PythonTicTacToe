@@ -106,10 +106,14 @@ def play():
         numCheck(num)
         switchPlayers()
         count +=1
-        if count == 9 or winCheck():
+        if count == 9 
             board()
             g_over = True
-    print('We have a Winner! {}, well done!'.format(players[1].name) )
+            print('We have a Winner! {}, well done!'.format(players[1].name) )
+        elif winCheck():
+            board()
+            g_over = True
+            print('It`s a draw!' )
   
 
 play()
