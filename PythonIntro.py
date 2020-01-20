@@ -87,7 +87,7 @@ def numCheck(num):
         numCheck(num)
 
 def winCheck():
-    if (input_one[1] == input_one[3] == input_one[5]) or (input_two[1] == input_two[3] == input_two[5]) or (input_three[1] == input_three[3] == input_three[5]) or (input_one[1] == input_two[1] == input_three[1]) or (input_one[3] == input_two[3] == input_three[3]) or (input_one[5] == input_two[5] == input_three[5]) or (input_one[1] == input_two[3] == input_three[5]) or (input_one[5] == input_two[3] == input_three[3]):
+    if (input_one[1] == input_one[3] == input_one[5]) or (input_two[1] == input_two[3] == input_two[5]) or (input_three[1] == input_three[3] == input_three[5]) or (input_one[1] == input_two[1] == input_three[1]) or (input_one[3] == input_two[3] == input_three[3]) or (input_one[5] == input_two[5] == input_three[5]) or (input_one[1] == input_two[3] == input_three[5]) or (input_one[5] == input_two[3] == input_three[1]):
         return True
 
 def switchPlayers():
@@ -106,11 +106,11 @@ def play():
         numCheck(num)
         switchPlayers()
         count +=1
-        if count == 9 
+        if winCheck():
             board()
             g_over = True
             print('We have a Winner! {}, well done!'.format(players[1].name) )
-        elif winCheck():
+        elif count == 9 :
             board()
             g_over = True
             print('It`s a draw!' )
