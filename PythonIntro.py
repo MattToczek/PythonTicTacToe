@@ -20,6 +20,19 @@ print('My Favourite drink is ' + favourite_drink)
 # OR
 print('My favourite drink is {}'.format(favourite_drink))
 
+def setup():
+    input_one[1] =  "1"
+    input_one[3] = "2" 
+    input_one[5] = "3" 
+    input_two[1] =  "4"
+    input_two[3] = "5" 
+    input_two[5] = "6" 
+    input_three[1] = "7"
+    input_three[3] = "8" 
+    input_three[5] = "9" 
+
+    board()
+
 input_one = ["  ", "1", "  |   ", "2", "   |   ", "3", "  "]
 input_two = ["  ", "4", "  |   ", "5", "   |   ", "6", "  "]
 input_three = ["  ", "7", "  |   ", "8", "   |   ", "9", "  "]
@@ -49,6 +62,8 @@ def board():
 
 
 board()
+
+# setup()
 
 class Player:
   def __init__(self, name, piece):
@@ -95,6 +110,20 @@ def switchPlayers():
     players[1] = players[0]
     players[0] = temp
 
+def anotherGo():
+    print('Would you like to play again?')
+    print('Type 1 for YES')
+    print('Or 2 for NO')
+    num = int(input())
+    if num == 1:
+        setup()
+        play()
+    elif num == 2:
+        return null
+    else: 
+        print("Please select a valid number")
+        anotherGo()
+
 
 def play():
     g_over = False
@@ -114,7 +143,8 @@ def play():
             board()
             g_over = True
             print('It`s a draw!' )
-  
-
+            break
+    anotherGo()
+    
 play()
 
