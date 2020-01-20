@@ -119,7 +119,7 @@ def anotherGo():
         setup()
         play()
     elif num == 2:
-        return null
+        return
     else: 
         print("Please select a valid number")
         anotherGo()
